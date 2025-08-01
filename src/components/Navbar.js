@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   AppBar,
   Toolbar,
@@ -12,19 +12,19 @@ import {
   Divider,
   Tooltip,
   useTheme,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
-import { Link as RouterLink } from 'react-router-dom';
-import { useThemeMode } from '../context/ThemeContext';
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
+import { Link as RouterLink } from "react-router-dom";
+import { useThemeMode } from "../context/ThemeContext";
 
 const links = [
-  { text: 'Home', to: '/' },
-  { text: 'Skills', to: '/skills' },
-  { text: 'Projects', to: '/projects' },
-  { text: 'Experience', to: '/experience' },
-  { text: 'Contact', to: '/contact' },
+  { text: "Home", to: "/" },
+  { text: "Skills", to: "/skills" },
+  { text: "Projects", to: "/projects" },
+  { text: "Experience", to: "/experience" },
+  { text: "Contact", to: "/contact" },
 ];
 
 const Navbar = () => {
@@ -42,37 +42,38 @@ const Navbar = () => {
           boxShadow: 1,
         }}
       >
-        <Toolbar sx={{ justifyContent: 'space-between' }}>
+        <Toolbar sx={{ justifyContent: "space-between" }}>
           {/* Links desktop */}
-          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 2 }}>
+          <Box sx={{ display: { xs: "none", md: "flex" }, gap: 2 }}>
             {links.map(({ text, to }) => (
               <Button
                 key={to}
                 component={RouterLink}
                 to={to}
-                sx={{ color: theme.palette.primary.main, fontWeight: 'bold' }}
+                sx={{ color: theme.palette.primary.main, fontWeight: "bold" }}
               >
                 {text}
               </Button>
             ))}
           </Box>
 
-          {/* Botón modo claro/oscuro */}
-          <Tooltip title={`Switch to ${mode === 'light' ? 'dark' : 'light'} mode`}>
-            <IconButton onClick={toggleTheme} color="inherit">
-              {mode === 'dark' ? <Brightness7Icon /> : <Brightness4Icon />}
-            </IconButton>
-          </Tooltip>
-
           {/* Menú móvil */}
           <IconButton
             edge="end"
             aria-label="menu"
             onClick={() => setOpen(true)}
-            sx={{ display: { xs: 'flex', md: 'none' } }}
+            sx={{ display: { xs: "flex", md: "none" } }}
           >
             <MenuIcon sx={{ color: theme.palette.primary.main }} />
           </IconButton>
+          {/* Botón modo claro/oscuro */}
+          <Tooltip
+            title={`Switch to ${mode === "light" ? "dark" : "light"} mode`}
+          >
+            <IconButton onClick={toggleTheme} color="inherit">
+              {mode === "dark" ? <Brightness7Icon /> : <Brightness4Icon />}
+            </IconButton>
+          </Tooltip>
         </Toolbar>
       </AppBar>
 
@@ -84,7 +85,7 @@ const Navbar = () => {
         PaperProps={{
           sx: {
             width: 240,
-            height: '100%',
+            height: "100%",
             backgroundColor: theme.palette.background.paper,
           },
         }}
@@ -98,7 +99,7 @@ const Navbar = () => {
               component={RouterLink}
               to={to}
               onClick={() => setOpen(false)}
-              sx={{ py: 2 }}
+              sx={{ py: 2, color: theme.palette.text.primary }}
             >
               <ListItemText primary={text} />
             </ListItem>
