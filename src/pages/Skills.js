@@ -11,7 +11,6 @@ import StorageIcon from '@mui/icons-material/Storage';
 import CloudIcon from '@mui/icons-material/Cloud';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import SecurityIcon from '@mui/icons-material/Security';
-import PsychologyIcon from '@mui/icons-material/Psychology';
 
 const sectionStyle = {
   p: 3,
@@ -88,19 +87,6 @@ const Skills = () => {
           </Typography>
         </Box>
         {['Linux (Debian)', 'Bash', 'Git / GitHub', 'SSH / SCP'].map((tech) => (
-          <Chip key={tech} label={tech} sx={chipStyle} color="primary" variant="outlined" />
-        ))}
-      </Paper>
-
-      {/* Data & AI */}
-      <Paper elevation={2} sx={sectionStyle}>
-        <Box display="flex" alignItems="center" mb={2}>
-          <PsychologyIcon color="primary" sx={{ mr: 1 }} />
-          <Typography variant="h6" fontWeight="medium">
-            Data & AI Tools
-          </Typography>
-        </Box>
-        {['Python', 'TensorFlow', 'Keras'].map((tech) => (
           <Chip key={tech} label={tech} sx={chipStyle} color="primary" variant="outlined" />
         ))}
       </Paper>
