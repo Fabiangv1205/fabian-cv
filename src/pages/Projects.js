@@ -10,12 +10,17 @@ import {
   CardMedia,
   CircularProgress,
   Grid,
+  Dialog,
+  DialogContent,
+  IconButton,
 } from "@mui/material";
+import CloseIcon from "@mui/icons-material/Close";
+import DownloadIcon from "@mui/icons-material/Download";
 
 const Examples = () => {
   const [productos, setProductos] = useState([]);
-  console.log(productos)
   const [loading, setLoading] = useState(true);
+  const [modalImg, setModalImg] = useState(null);
 
   useEffect(() => {
     fetch("https://ishoes.fabiandev.org/api/productos/todos")
@@ -30,6 +35,9 @@ const Examples = () => {
       });
   }, []);
 
+  const handleOpenModal = (src) => setModalImg(src);
+  const handleCloseModal = () => setModalImg(null);
+
   return (
     <Container maxWidth="md" sx={{ py: 6 }}>
       <Typography variant="h4" fontWeight="bold" gutterBottom>
@@ -41,30 +49,79 @@ const Examples = () => {
 
       {/* Example 1 */}
       <Paper sx={{ p: 3, mb: 4 }}>
-        <Typography variant="h6">Login Form with Firebase</Typography>
+        <Typography variant="h5" fontWeight="bold" gutterBottom>
+          Screenshots from app iShoes
+        </Typography>
         <Typography variant="body2" color="text.secondary" mb={2}>
           Example login screen using Firebase Auth with form validation and
           role-based access.
         </Typography>
-        <Box>
-          <Button variant="outlined" href="/examples/login" size="small">
-            🔍 View Example
+
+        <Box textAlign="center" mb={3}>
+          <Button
+            variant="contained"
+            color="primary"
+            href="/ishoes_preview.apk"
+            download
+            startIcon={<DownloadIcon />}
+          >
+            Download iShoes App (APK)
           </Button>
         </Box>
+
+        <Grid container spacing={2}>
+          {[1, 2, 3, 4, 5].map((i) => (
+            <Grid item xs={12} sm={6} key={i}>
+              <Box
+                component="img"
+                src={`/${i}.jpg`}
+                alt={`Screenshot ${i}`}
+                onClick={() => handleOpenModal(`/${i}.jpg`)}
+                sx={{
+                  width: "100%",
+                  maxHeight: 350,
+                  objectFit: "contain",
+                  backgroundColor: "#f8f9fa",
+                  borderRadius: 2,
+                  border: "1px solid #e1e4e8",
+                  boxShadow: 1,
+                  p: 1,
+                  cursor: "pointer",
+                  transition: "0.2s",
+                  "&:hover": {
+                    transform: "scale(1.02)",
+                  },
+                }}
+              />
+            </Grid>
+          ))}
+        </Grid>
       </Paper>
 
-      {/* Example 2 */}
-      <Paper sx={{ p: 3, mb: 4 }}>
-        <Typography variant="h6">Animated Cart Example</Typography>
-        <Typography variant="body2" color="text.secondary" mb={2}>
-          Example of cart animation used in iShoes e-commerce app.
-        </Typography>
-        <Box>
-          <Button variant="outlined" href="/examples/cart" size="small">
-            🔍 View Example
-          </Button>
-        </Box>
-      </Paper>
+      {/* Modal Viewer */}
+      <Dialog open={!!modalImg} onClose={handleCloseModal} maxWidth="md">
+        <DialogContent sx={{ p: 0, position: "relative" }}>
+          <IconButton
+            onClick={handleCloseModal}
+            sx={{ position: "absolute", top: 8, right: 8, zIndex: 1 }}
+          >
+            <CloseIcon />
+          </IconButton>
+          <Box
+            component="img"
+            src={modalImg}
+            alt="Full size screenshot"
+            sx={{
+              width: "100%",
+              height: "auto",
+              maxHeight: "90vh",
+              objectFit: "contain",
+              display: "block",
+              borderRadius: 1,
+            }}
+          />
+        </DialogContent>
+      </Dialog>
 
       {/* Example 3: Fetch from iShoes API */}
       <Paper sx={{ p: 3, mb: 4 }}>

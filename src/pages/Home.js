@@ -196,8 +196,8 @@ conviértete en experto en Deep Learning
             />
           </ListItem>
         </List>
-        <MuiLink href="/portfolio" underline="hover">
-          🖼️ View full portfolio →
+        <MuiLink href="/projects" underline="hover">
+           View projects →
         </MuiLink>
       </Paper>
     </Container>
