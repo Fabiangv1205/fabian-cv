@@ -36,7 +36,7 @@ const Home = () => {
             variant="contained"
             color="primary"
             startIcon={<DownloadIcon />}
-            href="/Roberto_Fabian_Gonzalez_Vargas.pdf"
+            href="/Roberto_Fabian_Gonzalez_Vargas2.pdf"
             download
           >
             Download CV

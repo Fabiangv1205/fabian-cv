@@ -11,6 +11,7 @@ import {
   CircularProgress,
   Grid,
   Dialog,
+  DialogTitle,
   DialogContent,
   IconButton,
 } from "@mui/material";
@@ -21,6 +22,7 @@ const Examples = () => {
   const [productos, setProductos] = useState([]);
   const [loading, setLoading] = useState(true);
   const [modalImg, setModalImg] = useState(null);
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     fetch("https://ishoes.fabiandev.org/api/productos/todos")
@@ -39,7 +41,7 @@ const Examples = () => {
   const handleCloseModal = () => setModalImg(null);
 
   return (
-    <Container maxWidth="md" sx={{ py: 6 }}>
+    <Container maxWidth="md" sx={{ py: 6, textAlign: "center" }}>
       <Typography variant="h4" fontWeight="bold" gutterBottom>
         Project Examples
       </Typography>
@@ -61,7 +63,7 @@ const Examples = () => {
           <Button
             variant="contained"
             color="primary"
-            href="/ishoes_preview.apk"
+            href="/Ishoes_preview.apk"
             download
             startIcon={<DownloadIcon />}
           >
@@ -134,21 +136,32 @@ const Examples = () => {
         {loading ? (
           <CircularProgress />
         ) : (
-          <Grid container spacing={3}>
+          <Grid container spacing={3} justifyContent="center">
             {productos.map((prod) => (
-              <Grid item xs={12} sm={6} key={prod.productId}>
+              <Grid
+                item
+                key={prod.productId}
+                sx={{
+                  width: 300,
+                  display: "flex",
+                }}
+              >
                 <Card
+                  onClick={() => setSelectedProduct(prod)}
                   sx={{
-                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "space-between",
+                    height: 300,
+                    width: "100%",
                     borderRadius: 3,
                     boxShadow: 3,
+                    cursor: "pointer",
                     transition: "transform 0.2s, box-shadow 0.2s",
                     "&:hover": {
                       transform: "translateY(-4px)",
                       boxShadow: 6,
                     },
-                    display: "flex",
-                    flexDirection: "column",
                   }}
                 >
                   <CardMedia
@@ -159,19 +172,20 @@ const Examples = () => {
                     alt={prod.nombre}
                     sx={{
                       height: 180,
-                      objectFit: "cover",
+                      objectFit: "contain",
                       borderTopLeftRadius: 12,
                       borderTopRightRadius: 12,
                     }}
                   />
                   <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography variant="h6" gutterBottom>
+                    <Typography variant="h6" gutterBottom noWrap>
                       {prod.nombre}
                     </Typography>
                     <Typography
                       variant="body2"
                       color="text.secondary"
                       sx={{ mb: 1 }}
+                      noWrap
                     >
                       {prod.descripcion}
                     </Typography>
@@ -188,6 +202,46 @@ const Examples = () => {
             ))}
           </Grid>
         )}
+
+        {/* Modal de detalles */}
+        <Dialog
+          open={Boolean(selectedProduct)}
+          onClose={() => setSelectedProduct(null)}
+          maxWidth="sm"
+          fullWidth
+        >
+          <DialogTitle>
+            {selectedProduct?.nombre}
+            <IconButton
+              aria-label="close"
+              onClick={() => setSelectedProduct(null)}
+              sx={{ position: "absolute", right: 8, top: 8 }}
+            >
+              <CloseIcon />
+            </IconButton>
+          </DialogTitle>
+          <DialogContent>
+            <CardMedia
+              component="img"
+              image={`https://ishoes.fabiandev.org${
+                selectedProduct?.images?.[0] || ""
+              }`}
+              alt={selectedProduct?.nombre}
+              sx={{
+                height: 250,
+                objectFit: "contain",
+                borderRadius: 2,
+                mb: 2,
+              }}
+            />
+            <Typography variant="body1" color="text.secondary" paragraph>
+              {selectedProduct?.descripcion}
+            </Typography>
+            <Typography variant="h6" color="primary">
+              ${parseFloat(selectedProduct?.price || 0).toFixed(2)}
+            </Typography>
+          </DialogContent>
+        </Dialog>
       </Paper>
     </Container>
   );
