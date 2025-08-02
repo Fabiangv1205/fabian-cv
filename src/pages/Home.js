@@ -4,10 +4,7 @@ import {
   Typography,
   Button,
   Box,
-  Card,
-  CardContent,
   Paper,
-  Chip,
   List,
   ListItem,
   ListItemText,
@@ -23,17 +20,16 @@ const Home = () => {
   return (
     <Container maxWidth="md" sx={{ py: 6 }}>
       {/* Hero */}
-      {/* Hero */}
       <Box textAlign="center" mb={6}>
         <Typography variant="h3" fontWeight="bold" gutterBottom>
           Roberto Fabián González Vargas
         </Typography>
         <Typography variant="h5" color="primary" gutterBottom>
-          Full Stack Developer (Jr)
+          Full Stack & Linux Systems Engineer
         </Typography>
         <Typography variant="body1" color="text.secondary" paragraph>
-          Creating clean, scalable and user-centric web/mobile solutions with
-          React, Firebase and Linux-based tools.
+          Creating scalable, maintainable and user-centric solutions with React,
+          Firebase and Linux tools.
         </Typography>
         <Box display="flex" justifyContent="center" gap={2} mt={2}>
           <Button
@@ -48,7 +44,6 @@ const Home = () => {
           <Button
             variant="outlined"
             color="primary"
-            component="a"
             href="https://github.com/Fabiangv1205"
             target="_blank"
             rel="noopener noreferrer"
@@ -64,50 +59,18 @@ const Home = () => {
           👤 Professional Summary
         </Typography>
         <Typography>
-          Electronics and Communications Engineering professional with
-          experience in Linux systems administration, automation using Ansible,
-          and web development with Python/Django. Skilled in Docker and cloud
-          services. Over the past year, I’ve worked as a freelance developer
-          building mobile applications with React Native and web apps with React
-          and Express. Strong ability to work independently or in teams, focused
-          on scalable, maintainable, and user-friendly software.
+          Full Stack and Linux Systems Engineer with hands-on experience in
+          Linux administration, automation using Ansible, and modern web
+          development with React, Express, and Django. Skilled in
+          containerization with Docker and cloud-based tools. Over the past
+          year, I’ve delivered tailored mobile and web applications for
+          real-world clients, working independently or collaboratively. Focused
+          on building scalable, maintainable, and user-centric software
+          solutions.
         </Typography>
       </Paper>
 
-      {/* Skills */}
-      <Paper elevation={3} sx={{ p: 4, mb: 5 }}>
-        <Typography variant="h5" gutterBottom>
-          🛠️ Skills Summary
-        </Typography>
-        <Box display="flex" flexWrap="wrap" gap={1} mb={2}>
-          {[
-            "JavaScript",
-            "React",
-            "React Native",
-            "Express.js",
-            "Firebase",
-            "Django",
-            "Docker",
-            "Ansible",
-            "Bash",
-            "Git",
-            "Linux (Debian)",
-            "REST APIs",
-          ].map((skill) => (
-            <Chip
-              key={skill}
-              label={skill}
-              color="primary"
-              variant="outlined"
-            />
-          ))}
-        </Box>
-        <MuiLink href="/skills" underline="hover">
-          🔍 View detailed technical skills →
-        </MuiLink>
-      </Paper>
-
-      {/* Experience */}
+      {/* Work Experience */}
       <Paper elevation={3} sx={{ p: 4, mb: 5 }}>
         <Typography variant="h5" gutterBottom>
           <WorkIcon sx={{ verticalAlign: "middle", mr: 1 }} />
@@ -121,19 +84,25 @@ const Home = () => {
         </Typography>
         <List dense>
           <ListItem>
-            <ListItemText primary="Built cross-platform mobile apps using React Native for Android and iOS." />
+            <ListItemText primary="- Built cross-platform mobile apps using React Native for Android and iOS." />
           </ListItem>
           <ListItem>
-            <ListItemText primary="Designed responsive web interfaces with React.js." />
+            <ListItemText primary="- Developed 'Tee-Time', a mobile app for managing golf reservations using React Native and Firebase." />
           </ListItem>
           <ListItem>
-            <ListItemText primary="Developed RESTful APIs using Express.js and Node.js." />
+            <ListItemText primary="- Built 'iShoes', an e-commerce mobile app with admin dashboard, image storage, cart animation and stock logic." />
           </ListItem>
           <ListItem>
-            <ListItemText primary="Integrated Firebase for auth, data and notifications." />
+            <ListItemText primary="- Designed and implemented the backend for 'iShoes' using Express.js, Firebase Admin SDK and RESTful APIs." />
           </ListItem>
           <ListItem>
-            <ListItemText primary="Delivered functional apps tailored to client needs and usage scenarios." />
+            <ListItemText primary="- Created 'Control de Ingresos', a financial tracking app with user balance summaries and Firestore." />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary="- Collaborated with clients to define requirements, timelines, and deliverables." />
+          </ListItem>
+          <ListItem>
+            <ListItemText primary="- Focused on clean, maintainable code and intuitive user experiences." />
           </ListItem>
         </List>
       </Paper>
@@ -147,38 +116,42 @@ const Home = () => {
         <List dense>
           <ListItem>
             <ListItemText
-              primary="LPI Linux Essentials"
+              primary="✅ Certificación LPI Linux Essentials: Temario oficial completo"
               secondary="UC-b8daa5cb-ab28-415b-92e2-4b7014757bdc"
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary="Ansible desde Cero"
+              primary=" ✅ Ansible desde Cero (2023)"
               secondary="UC-72bcfa43-5440-4475-a7f8-de77b82c6572"
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary="Python Total (Avanzado en 16 días)"
+              primary="✅ Python Total. Programador Avanzado en 16 dias"
               secondary="UC-329464f6-fa0e-482d-8e9e-907d56728c00"
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary="Docker en 5 días"
+              primary="✅ Maneja Dockers en 5 dias. Mejora como SysAdmin Linux  o Devops"
               secondary="UC-d4f421dd-64c3-41c6-81c6-c3e2c3812dca"
             />
           </ListItem>
           <ListItem>
             <ListItemText
-              primary="Curso LPIC-1 (Linux Admin)"
-              secondary="In progress"
+              primary="✅ Certificación LPIC-2: Ingeniero Linux. Examen 201"
+              secondary="UC-bb29d961-354d-4066-ba42-9363cebd7358"
             />
           </ListItem>
           <ListItem>
+            <ListItemText primary="⏳ Curso de Inglés B1.2/B2.1 garantizado" />
+          </ListItem>
+          <ListItem>
             <ListItemText
-              primary="Curso de Inglés B1.2/B2.1"
-              secondary="In progress"
+              primary="⏳ Aprende Inteligencia Artificial y Deep Learning con Python, Tensorflowy Keras,
+conviértete en experto en Deep Learning
+"
             />
           </ListItem>
         </List>
@@ -203,27 +176,26 @@ const Home = () => {
           <FolderSpecialIcon sx={{ verticalAlign: "middle", mr: 1 }} />
           Portfolio Highlights
         </Typography>
-
-        <Card sx={{ mb: 3, transition: "0.3s", "&:hover": { boxShadow: 6 } }}>
-          <CardContent>
-            <Typography variant="h6">iShoes</Typography>
-            <Typography variant="body2">
-              Mobile e-commerce app with admin dashboard, cloud image storage,
-              and cart animation. Built with React Native + Firebase.
-            </Typography>
-          </CardContent>
-        </Card>
-
-        <Card sx={{ mb: 3, transition: "0.3s", "&:hover": { boxShadow: 6 } }}>
-          <CardContent>
-            <Typography variant="h6">Gastos App</Typography>
-            <Typography variant="body2">
-              Expense tracker with weekly summaries, user balances and Firestore
-              integration.
-            </Typography>
-          </CardContent>
-        </Card>
-
+        <List dense>
+          <ListItem>
+            <ListItemText
+              primary="🟢 Tee-Time"
+              secondary="Golf reservation app built with React Native"
+            />
+          </ListItem>
+          <ListItem>
+            <ListItemText
+              primary="🟢 iShoes"
+              secondary="E-commerce app with admin dashboard, backend and stock management"
+            />
+          </ListItem>
+          <ListItem>
+            <ListItemText
+              primary="🟢 Control de Ingresos"
+              secondary="Weekly summary and expense tracker with Firestore integration"
+            />
+          </ListItem>
+        </List>
         <MuiLink href="/portfolio" underline="hover">
           🖼️ View full portfolio →
         </MuiLink>

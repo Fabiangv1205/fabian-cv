@@ -23,7 +23,6 @@ const links = [
   { text: "Home", to: "/" },
   { text: "Skills", to: "/skills" },
   { text: "Projects", to: "/projects" },
-  { text: "Experience", to: "/experience" },
   { text: "Contact", to: "/contact" },
 ];
 
