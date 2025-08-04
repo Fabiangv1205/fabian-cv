@@ -131,7 +131,8 @@ const Examples = () => {
         <Typography variant="h6">Fetch Products from iShoes Backend</Typography>
         <Typography variant="body2" color="text.secondary" mb={3}>
           This example shows products retrieved from the iShoes backend REST
-          API.
+          API. Products can be added, edited, or deleted directly from the
+          iShoes mobile app.
         </Typography>
 
         {loading ? (
