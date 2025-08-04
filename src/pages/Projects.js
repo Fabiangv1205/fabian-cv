@@ -56,7 +56,8 @@ const Examples = () => {
         </Typography>
         <Typography variant="body2" color="text.secondary" mb={2}>
           Example login screen using Firebase Auth with form validation and
-          role-based access.
+          role-based access. The backend is deployed on a self-hosted server and
+          securely exposed to the internet through a Cloudflare Tunnel.
         </Typography>
 
         <Box textAlign="center" mb={3}>
