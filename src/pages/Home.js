@@ -149,8 +149,7 @@ const Home = () => {
           </ListItem>
           <ListItem>
             <ListItemText
-              primary="⏳ Aprende Inteligencia Artificial y Deep Learning con Python, Tensorflowy Keras,
-conviértete en experto en Deep Learning
+              primary="⏳ Aprende Machine Learning y Data Science con Python, ¡conviértete en un experto en Machine Learning con Python!
 "
             />
           </ListItem>
