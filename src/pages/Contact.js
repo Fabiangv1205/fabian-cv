@@ -11,13 +11,15 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import PublicIcon from '@mui/icons-material/Public';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import { useLanguage } from '../context/LanguageContext';
 
 const Contact = () => {
+  const { t } = useLanguage();
   return (
     <Container maxWidth="sm" sx={{ py: 6 }}>
-      <Typography variant="h4" fontWeight="bold" gutterBottom textAlign="center">
-        Contact
-      </Typography>
+    <Typography variant="h4" fontWeight="bold" gutterBottom textAlign="center">
+       {t("contact.title")}
+     </Typography>
 
       <Stack spacing={2}>
         <Box display="flex" alignItems="center">
@@ -47,13 +49,13 @@ const Contact = () => {
             rel="noopener noreferrer"
             underline="hover"
           >
-            LinkedIn Profile
+            {t("contact.linkedin")}
           </Link>
         </Box>
 
         <Box display="flex" alignItems="center">
           <LocationOnIcon color="primary" sx={{ mr: 1 }} />
-          <Typography>Guadalajara, Jalisco, Mexico</Typography>
+          <Typography>{t("contact.location")}</Typography>
         </Box>
       </Stack>
     </Container>

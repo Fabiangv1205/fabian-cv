@@ -11,6 +11,7 @@ import StorageIcon from '@mui/icons-material/Storage';
 import CloudIcon from '@mui/icons-material/Cloud';
 import TerminalIcon from '@mui/icons-material/Terminal';
 import SecurityIcon from '@mui/icons-material/Security';
+import { useLanguage } from '../context/LanguageContext';
 
 const sectionStyle = {
   p: 3,
@@ -30,22 +31,21 @@ const chipStyle = {
 };
 
 const Skills = () => {
+  const { t } = useLanguage();
   return (
     <Container maxWidth="md" sx={{ mt: 6, mb: 6 }}>
       <Typography variant="h3" textAlign="center" fontWeight="bold" gutterBottom>
-        Technical Skills
-      </Typography>
-      <Typography variant="subtitle1" textAlign="center" color="text.secondary" mb={5}>
-        A categorized list of tools, frameworks, and technologies I use professionally
-      </Typography>
+               {t("skills.title")}
+             </Typography>
+           <Typography variant="subtitle1" textAlign="center" color="text.secondary" mb={5}>
+             {t("skills.subtitle")}
+             </Typography>
 
       {/* Frontend */}
       <Paper elevation={2} sx={sectionStyle}>
         <Box display="flex" alignItems="center" mb={2}>
           <CodeIcon color="primary" sx={{ mr: 1 }} />
-          <Typography variant="h6" fontWeight="medium">
-            Frontend
-          </Typography>
+          <Typography variant="h6" fontWeight="medium">{t("skills.frontend")}</Typography>
         </Box>
         {['JavaScript', 'React', 'React Native', 'Expo', 'Material UI'].map((tech) => (
           <Chip key={tech} label={tech} sx={chipStyle} color="primary" variant="outlined" />
@@ -56,9 +56,7 @@ const Skills = () => {
       <Paper elevation={2} sx={sectionStyle}>
         <Box display="flex" alignItems="center" mb={2}>
           <StorageIcon color="primary" sx={{ mr: 1 }} />
-          <Typography variant="h6" fontWeight="medium">
-            Backend
-          </Typography>
+          <Typography variant="h6" fontWeight="medium">{t("skills.backend")}</Typography>
         </Box>
         {['Express.js', 'Django', 'Firebase Auth', 'Firestore', 'REST APIs'].map((tech) => (
           <Chip key={tech} label={tech} sx={chipStyle} color="primary" variant="outlined" />
@@ -69,9 +67,7 @@ const Skills = () => {
       <Paper elevation={2} sx={sectionStyle}>
         <Box display="flex" alignItems="center" mb={2}>
           <CloudIcon color="primary" sx={{ mr: 1 }} />
-          <Typography variant="h6" fontWeight="medium">
-            DevOps & Infrastructure
-          </Typography>
+          <Typography variant="h6" fontWeight="medium">{t("skills.devops")}</Typography>
         </Box>
         {['Cloudflare Tunnel', 'Docker', 'CI/CD (basic)', 'Ansible'].map((tech) => (
           <Chip key={tech} label={tech} sx={chipStyle} color="primary" variant="outlined" />
@@ -82,9 +78,7 @@ const Skills = () => {
       <Paper elevation={2} sx={sectionStyle}>
         <Box display="flex" alignItems="center" mb={2}>
           <TerminalIcon color="primary" sx={{ mr: 1 }} />
-          <Typography variant="h6" fontWeight="medium">
-            Linux & CLI Tools
-          </Typography>
+          <Typography variant="h6" fontWeight="medium">{t("skills.linux")}</Typography>
         </Box>
         {['Linux (Debian)', 'Bash', 'Git / GitHub', 'SSH / SCP'].map((tech) => (
           <Chip key={tech} label={tech} sx={chipStyle} color="primary" variant="outlined" />
@@ -95,9 +89,7 @@ const Skills = () => {
       <Paper elevation={2} sx={sectionStyle}>
         <Box display="flex" alignItems="center" mb={2}>
           <SecurityIcon color="primary" sx={{ mr: 1 }} />
-          <Typography variant="h6" fontWeight="medium">
-            Security Basics
-          </Typography>
+          <Typography variant="h6" fontWeight="medium">{t("skills.security")}</Typography>
         </Box>
         {['HTTPS / SSL', 'Auth with JWT', 'Role-based Access Control'].map((tech) => (
           <Chip key={tech} label={tech} sx={chipStyle} color="primary" variant="outlined" />

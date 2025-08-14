@@ -1,12 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ThemeContextProvider } from './context/ThemeContext';
-import { useTheme } from '@mui/material/styles'; 
+import { useTheme } from '@mui/material/styles';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
+import { Lan } from '@mui/icons-material';
+import { LanguageProvider } from './context/LanguageContext';
 
 const AppContent = () => {
   const theme = useTheme();
@@ -18,7 +20,7 @@ const AppContent = () => {
         style={{
           padding: '2rem',
           fontFamily: 'Arial, sans-serif',
-          backgroundColor: theme.palette.background.default, 
+          backgroundColor: theme.palette.background.default,
           minHeight: '100vh',
         }}
       >
@@ -34,9 +36,12 @@ const AppContent = () => {
 };
 
 const App = () => (
-  <ThemeContextProvider>
-    <AppContent />
-  </ThemeContextProvider>
+  <LanguageProvider>
+    <ThemeContextProvider>
+      <AppContent />
+    </ThemeContextProvider>
+  </LanguageProvider>
+
 );
 
 export default App;
