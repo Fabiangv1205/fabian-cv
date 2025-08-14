@@ -4,7 +4,6 @@ import {
   Container,
   Typography,
   Button,
-  Box,
   Paper,
   Card,
   CardContent,
@@ -18,14 +17,13 @@ import {
   alpha,
 } from "@mui/material";
 import DownloadIcon from "@mui/icons-material/Download";
-import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import SchoolIcon from "@mui/icons-material/School";
 import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useLanguage } from "../context/LanguageContext";
-import GitHubIcon from "@mui/icons-material/GitHub"
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 const SectionCard = ({ icon, title, children, action }) => {
   const theme = useTheme();
@@ -60,45 +58,73 @@ const Home = () => {
   const theme = useTheme();
   const { t } = useLanguage();
 
-  const primaryTone = alpha(theme.palette.primary.main, theme.palette.mode === "dark" ? 0.18 : 0.12);
+  const primaryTone = alpha(
+    theme.palette.primary.main,
+    theme.palette.mode === "dark" ? 0.18 : 0.12
+  );
 
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 4, md: 6 } }}>
-      {/* HERO */}
+      {/* HERO - responsive fix */}
       <Paper
         elevation={3}
         sx={{
           p: { xs: 3, md: 5 },
           mb: 4,
           borderRadius: 4,
+          textAlign: "center",
           background: `linear-gradient(0deg, ${alpha(
             theme.palette.primary.main,
             theme.palette.mode === "dark" ? 0.12 : 0.08
           )}, transparent)`,
         }}
       >
-        <Stack spacing={2} alignItems="center" textAlign="center">
-          <Typography variant="h3" fontWeight={900}>
+        <Stack spacing={{ xs: 2.5, md: 3 }} alignItems="center">
+          {/* Nombre con clamp para XS */}
+          <Typography
+            fontWeight={900}
+            sx={{
+              lineHeight: 1.1,
+              fontSize: {
+                xs: "clamp(28px, 9vw, 40px)",
+                sm: "clamp(36px, 6.5vw, 52px)",
+                md: "clamp(44px, 5.5vw, 64px)",
+              },
+            }}
+          >
             {t("home.name")}
           </Typography>
-          <Typography variant="h5" color="primary" fontWeight={700}>
+
+          {/* Título ajustado por breakpoint */}
+          <Typography
+            color="primary"
+            fontWeight={700}
+            sx={{ fontSize: { xs: "1.15rem", md: "1.5rem" } }}
+          >
             {t("home.title")}
           </Typography>
+
+          {/* Subtítulo con ancho máx. y tamaño más discreto en XS */}
           <Typography
-            variant="body1"
             color="text.secondary"
-            sx={{ maxWidth: 900 }}
+            sx={{ maxWidth: 900, fontSize: { xs: "1rem", md: "1.1rem" } }}
           >
             {t("home.subtitle")}
           </Typography>
 
-          <Stack direction="row" spacing={2} sx={{ pt: 1 }} flexWrap="wrap" justifyContent="center">
+          {/* Botones: columna en XS, fila desde SM */}
+          <Stack
+            direction={{ xs: "column", sm: "row" }}
+            spacing={1.5}
+            sx={{ pt: 1, width: "100%", maxWidth: 520 }}
+            justifyContent="center"
+          >
             <Button
               variant="contained"
               startIcon={<DownloadIcon />}
               href="/Roberto_Fabian_Gonzalez_Vargas2.pdf"
               download
-              sx={{ borderRadius: 99, px: 2 }}
+              sx={{ borderRadius: 99, px: 2.5, width: { xs: "100%", sm: "auto" } }}
             >
               {t("common.downloadCV")}
             </Button>
@@ -108,33 +134,37 @@ const Home = () => {
               href="https://github.com/Fabiangv1205"
               target="_blank"
               rel="noopener noreferrer"
-              sx={{ borderRadius: 99, px: 2 }}
+              sx={{ borderRadius: 99, px: 2.5, width: { xs: "100%", sm: "auto" } }}
             >
               {t("common.github")}
             </Button>
           </Stack>
 
-          {/* Quick chips */}
+          {/* Chips: wrap + gaps y límites de ancho */}
           <Stack
             direction="row"
-            spacing={1}
-            sx={{ pt: 2 }}
-            flexWrap="wrap"
-            justifyContent="center"
+            sx={{ pt: 2, width: "100%", maxWidth: 680, justifyContent: "center", flexWrap: "wrap", gap: 1, rowGap: 1 }}
           >
-            {["React", "React Native", "Express", "Firebase", "Docker", "Linux/CLI", "Ansible"].map(
-              (tag) => (
-                <Chip
-                  key={tag}
-                  label={tag}
-                  size="small"
-                  sx={{
-                    bgcolor: primaryTone,
-                    fontWeight: 600,
-                  }}
-                />
-              )
-            )}
+            {[
+              "React",
+              "React Native",
+              "Express",
+              "Firebase",
+              "Docker",
+              "Linux/CLI",
+              "Ansible",
+            ].map((tag) => (
+              <Chip
+                key={tag}
+                label={tag}
+                size="small"
+                sx={{
+                  bgcolor: primaryTone,
+                  fontWeight: 600,
+                  whiteSpace: "nowrap",
+                }}
+              />
+            ))}
           </Stack>
         </Stack>
       </Paper>
@@ -251,39 +281,24 @@ const Home = () => {
           >
             <Grid container spacing={2}>
               <Grid item xs={12} md={4}>
-                <Paper
-                  variant="outlined"
-                  sx={{ p: 2, borderRadius: 3, height: "100%" }}
-                >
-                  <Typography fontWeight={700}>
-                    {t("home.portfolio.teetime")}
-                  </Typography>
+                <Paper variant="outlined" sx={{ p: 2, borderRadius: 3, height: "100%" }}>
+                  <Typography fontWeight={700}>{t("home.portfolio.teetime")}</Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
                     {t("home.portfolio.teetimeDesc")}
                   </Typography>
                 </Paper>
               </Grid>
               <Grid item xs={12} md={4}>
-                <Paper
-                  variant="outlined"
-                  sx={{ p: 2, borderRadius: 3, height: "100%" }}
-                >
-                  <Typography fontWeight={700}>
-                    {t("home.portfolio.ishoes")}
-                  </Typography>
+                <Paper variant="outlined" sx={{ p: 2, borderRadius: 3, height: "100%" }}>
+                  <Typography fontWeight={700}>{t("home.portfolio.ishoes")}</Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
                     {t("home.portfolio.ishoesDesc")}
                   </Typography>
                 </Paper>
               </Grid>
               <Grid item xs={12} md={4}>
-                <Paper
-                  variant="outlined"
-                  sx={{ p: 2, borderRadius: 3, height: "100%" }}
-                >
-                  <Typography fontWeight={700}>
-                    {t("home.portfolio.ingresos")}
-                  </Typography>
+                <Paper variant="outlined" sx={{ p: 2, borderRadius: 3, height: "100%" }}>
+                  <Typography fontWeight={700}>{t("home.portfolio.ingresos")}</Typography>
                   <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
                     {t("home.portfolio.ingresosDesc")}
                   </Typography>

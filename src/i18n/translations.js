@@ -72,7 +72,7 @@ const translations = {
         "Creando soluciones escalables, mantenibles y centradas en el usuario con React, Firebase y herramientas Linux.",
       summaryTitle: "Resumen Profesional",
       summaryText:
-        "Ingeniero Full Stack y de Sistemas Linux con experiencia práctica en administración de Linux, automatización con Ansible y desarrollo web moderno con React, Express y Django. Experto en contenerización con Docker y herramientas en la nube. Durante el último año, he entregado aplicaciones web y móviles personalizadas para clientes reales, trabajando de forma independiente o en equipo. Enfocado en construir soluciones escalables, mantenibles y centradas en el usuario.",
+        "Ingeniero Full Stack y de Sistemas Linux con experiencia práctica en administración de Linux, automatización con Ansible y desarrollo web moderno con React y Express. Conocimientos en contenerización con Docker y herramientas en la nube. Durante el último año, he entregado aplicaciones web y móviles personalizadas para clientes reales, trabajando de forma independiente o en equipo. Enfocado en construir soluciones escalables, mantenibles y centradas en el usuario.",
       workTitle: "Experiencia Laboral",
       freelance: "Desarrollador Web & Móvil Freelance",
       period: "Enero 2024 – Presente",

@@ -1,100 +1,154 @@
-import React from 'react';
+// src/pages/Skills.js
+import React from "react";
 import {
   Container,
   Typography,
-  Box,
   Paper,
+  Card,
+  CardHeader,
+  CardContent,
   Chip,
-} from '@mui/material';
-import CodeIcon from '@mui/icons-material/Code';
-import StorageIcon from '@mui/icons-material/Storage';
-import CloudIcon from '@mui/icons-material/Cloud';
-import TerminalIcon from '@mui/icons-material/Terminal';
-import SecurityIcon from '@mui/icons-material/Security';
-import { useLanguage } from '../context/LanguageContext';
+  Stack,
+  Grid,
+  useTheme,
+  alpha,
+} from "@mui/material";
+import CodeIcon from "@mui/icons-material/Code";
+import StorageIcon from "@mui/icons-material/Storage";
+import CloudIcon from "@mui/icons-material/Cloud";
+import TerminalIcon from "@mui/icons-material/Terminal";
+import SecurityIcon from "@mui/icons-material/Security";
+import { useLanguage } from "../context/LanguageContext";
 
-const sectionStyle = {
-  p: 3,
-  mb: 4,
-  borderLeft: '6px solid #1976d2',
-  transition: 'all 0.2s ease-in-out',
-};
-
-const chipStyle = {
-  mr: 1,
-  mb: 1,
-  transition: '0.2s',
-  '&:hover': {
-    transform: 'scale(1.05)',
-    backgroundColor: '#e3f2fd',
-  },
+const SectionCard = ({ icon, title, children }) => {
+  const theme = useTheme();
+  return (
+    <Card
+      elevation={2}
+      sx={{
+        borderRadius: 3,
+        overflow: "hidden",
+        backgroundColor: theme.palette.background.paper,
+      }}
+    >
+      <CardHeader
+        avatar={icon}
+        title={<Typography variant="h6" fontWeight={800}>{title}</Typography>}
+        sx={{ pb: 0, "& .MuiCardHeader-title": { fontWeight: 800 } }}
+      />
+      <CardContent sx={{ pt: 2 }}>{children}</CardContent>
+    </Card>
+  );
 };
 
 const Skills = () => {
+  const theme = useTheme();
   const { t } = useLanguage();
+
+  const primaryTone = alpha(
+    theme.palette.primary.main,
+    theme.palette.mode === "dark" ? 0.18 : 0.12
+  );
+
+  const chipSx = {
+    bgcolor: primaryTone,
+    fontWeight: 600,
+    whiteSpace: "nowrap",
+  };
+
   return (
-    <Container maxWidth="md" sx={{ mt: 6, mb: 6 }}>
-      <Typography variant="h3" textAlign="center" fontWeight="bold" gutterBottom>
-               {t("skills.title")}
-             </Typography>
-           <Typography variant="subtitle1" textAlign="center" color="text.secondary" mb={5}>
-             {t("skills.subtitle")}
-             </Typography>
+    <Container maxWidth="lg" sx={{ py: { xs: 4, md: 6 } }}>
+      {/* HERO (mismo estilo que Home, con ajustes móviles) */}
+      <Paper
+        elevation={3}
+        sx={{
+          p: { xs: 3, md: 5 },
+          mb: 4,
+          borderRadius: 4,
+          textAlign: "center",
+          background: `linear-gradient(0deg, ${alpha(
+            theme.palette.primary.main,
+            theme.palette.mode === "dark" ? 0.12 : 0.08
+          )}, transparent)`,
+        }}
+      >
+        <Stack spacing={{ xs: 2.5, md: 3 }} alignItems="center">
+          <Typography
+            fontWeight={900}
+            sx={{
+              lineHeight: 1.1,
+              fontSize: {
+                xs: "clamp(28px, 8.5vw, 40px)",
+                sm: "clamp(36px, 6.5vw, 52px)",
+                md: "clamp(44px, 5.5vw, 64px)",
+              },
+            }}
+          >
+            {t("skills.title")}
+          </Typography>
 
-      {/* Frontend */}
-      <Paper elevation={2} sx={sectionStyle}>
-        <Box display="flex" alignItems="center" mb={2}>
-          <CodeIcon color="primary" sx={{ mr: 1 }} />
-          <Typography variant="h6" fontWeight="medium">{t("skills.frontend")}</Typography>
-        </Box>
-        {['JavaScript', 'React', 'React Native', 'Expo', 'Material UI'].map((tech) => (
-          <Chip key={tech} label={tech} sx={chipStyle} color="primary" variant="outlined" />
-        ))}
+          <Typography
+            color="text.secondary"
+            sx={{ maxWidth: 900, fontSize: { xs: "1rem", md: "1.1rem" } }}
+          >
+            {t("skills.subtitle")}
+          </Typography>
+
+        </Stack>
       </Paper>
 
-      {/* Backend */}
-      <Paper elevation={2} sx={sectionStyle}>
-        <Box display="flex" alignItems="center" mb={2}>
-          <StorageIcon color="primary" sx={{ mr: 1 }} />
-          <Typography variant="h6" fontWeight="medium">{t("skills.backend")}</Typography>
-        </Box>
-        {['Express.js', 'Django', 'Firebase Auth', 'Firestore', 'REST APIs'].map((tech) => (
-          <Chip key={tech} label={tech} sx={chipStyle} color="primary" variant="outlined" />
-        ))}
-      </Paper>
+      {/* GRID por categorías (SectionCard como en Home) */}
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={6}>
+          <SectionCard icon={<CodeIcon color="primary" />} title={t("skills.frontend")}>
+            <Stack direction="row" flexWrap="wrap" gap={1} rowGap={1}>
+              {["JavaScript", "React", "React Native", "Expo", "Material UI"].map((tech) => (
+                <Chip key={tech} label={tech} sx={chipSx} />
+              ))}
+            </Stack>
+          </SectionCard>
+        </Grid>
 
-      {/* DevOps & Infra */}
-      <Paper elevation={2} sx={sectionStyle}>
-        <Box display="flex" alignItems="center" mb={2}>
-          <CloudIcon color="primary" sx={{ mr: 1 }} />
-          <Typography variant="h6" fontWeight="medium">{t("skills.devops")}</Typography>
-        </Box>
-        {['Cloudflare Tunnel', 'Docker', 'CI/CD (basic)', 'Ansible'].map((tech) => (
-          <Chip key={tech} label={tech} sx={chipStyle} color="primary" variant="outlined" />
-        ))}
-      </Paper>
+        <Grid item xs={12} md={6}>
+          <SectionCard icon={<StorageIcon color="primary" />} title={t("skills.backend")}>
+            <Stack direction="row" flexWrap="wrap" gap={1} rowGap={1}>
+              {["Express.js", "Firebase Auth", "Firestore", "REST APIs"].map((tech) => (
+                <Chip key={tech} label={tech} sx={chipSx} />
+              ))}
+            </Stack>
+          </SectionCard>
+        </Grid>
 
-      {/* Linux & CLI */}
-      <Paper elevation={2} sx={sectionStyle}>
-        <Box display="flex" alignItems="center" mb={2}>
-          <TerminalIcon color="primary" sx={{ mr: 1 }} />
-          <Typography variant="h6" fontWeight="medium">{t("skills.linux")}</Typography>
-        </Box>
-        {['Linux (Debian)', 'Bash', 'Git / GitHub', 'SSH / SCP'].map((tech) => (
-          <Chip key={tech} label={tech} sx={chipStyle} color="primary" variant="outlined" />
-        ))}
-      </Paper>
+        <Grid item xs={12} md={6}>
+          <SectionCard icon={<CloudIcon color="primary" />} title={t("skills.devops")}>
+            <Stack direction="row" flexWrap="wrap" gap={1} rowGap={1}>
+              {["Cloudflare Tunnel", "Docker", "CI/CD (basic)", "Ansible"].map((tech) => (
+                <Chip key={tech} label={tech} sx={chipSx} />
+              ))}
+            </Stack>
+          </SectionCard>
+        </Grid>
 
-      {/* Security */}
-      <Paper elevation={2} sx={sectionStyle}>
-        <Box display="flex" alignItems="center" mb={2}>
-          <SecurityIcon color="primary" sx={{ mr: 1 }} />
-          <Typography variant="h6" fontWeight="medium">{t("skills.security")}</Typography>
-        </Box>
-        {['HTTPS / SSL', 'Auth with JWT', 'Role-based Access Control'].map((tech) => (
-          <Chip key={tech} label={tech} sx={chipStyle} color="primary" variant="outlined" />
-        ))}
-      </Paper>
+        <Grid item xs={12} md={6}>
+          <SectionCard icon={<TerminalIcon color="primary" />} title={t("skills.linux")}>
+            <Stack direction="row" flexWrap="wrap" gap={1} rowGap={1}>
+              {["Linux (Debian)", "Bash", "Git / GitHub", "SSH / SCP"].map((tech) => (
+                <Chip key={tech} label={tech} sx={chipSx} />
+              ))}
+            </Stack>
+          </SectionCard>
+        </Grid>
+
+        <Grid item xs={12} md={6}>
+          <SectionCard icon={<SecurityIcon color="primary" />} title={t("skills.security")}>
+            <Stack direction="row" flexWrap="wrap" gap={1} rowGap={1}>
+              {["HTTPS / SSL", "Auth with JWT", "Role-based Access Control"].map((tech) => (
+                <Chip key={tech} label={tech} sx={chipSx} />
+              ))}
+            </Stack>
+          </SectionCard>
+        </Grid>
+      </Grid>
     </Container>
   );
 };
