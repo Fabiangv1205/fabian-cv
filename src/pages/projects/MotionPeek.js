@@ -158,9 +158,9 @@ const MotionPeek = () => {
       const { id } = await res.json();
       if (!id) throw new Error("No se recibió id de predicción");
 
-      // 2) poll cada 3s hasta que esté listo o falle
+     
       const start = Date.now();
-      const timeoutMs = 5 * 60 * 1000; // 5 min tope
+      const timeoutMs = 5 * 60 * 1000;
 
       while (true) {
         await new Promise((r) => setTimeout(r, 3000));
