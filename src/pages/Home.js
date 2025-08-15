@@ -20,8 +20,6 @@ import DownloadIcon from "@mui/icons-material/Download";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import SchoolIcon from "@mui/icons-material/School";
-import FolderSpecialIcon from "@mui/icons-material/FolderSpecial";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useLanguage } from "../context/LanguageContext";
 import GitHubIcon from "@mui/icons-material/GitHub";
 
@@ -260,51 +258,6 @@ const Home = () => {
                 (Truncated)
               </Typography>
             </Stack>
-          </SectionCard>
-        </Grid>
-
-        {/* Portafolio destacado */}
-        <Grid item xs={12}>
-          <SectionCard
-            icon={<FolderSpecialIcon color="primary" />}
-            title={t("home.portfolioTitle")}
-            action={
-              <Button
-                variant="text"
-                size="small"
-                endIcon={<ArrowForwardIcon />}
-                href="/projects"
-              >
-                {t("home.viewProjects")}
-              </Button>
-            }
-          >
-            <Grid container spacing={2}>
-              <Grid item xs={12} md={4}>
-                <Paper variant="outlined" sx={{ p: 2, borderRadius: 3, height: "100%" }}>
-                  <Typography fontWeight={700}>{t("home.portfolio.teetime")}</Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-                    {t("home.portfolio.teetimeDesc")}
-                  </Typography>
-                </Paper>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Paper variant="outlined" sx={{ p: 2, borderRadius: 3, height: "100%" }}>
-                  <Typography fontWeight={700}>{t("home.portfolio.ishoes")}</Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-                    {t("home.portfolio.ishoesDesc")}
-                  </Typography>
-                </Paper>
-              </Grid>
-              <Grid item xs={12} md={4}>
-                <Paper variant="outlined" sx={{ p: 2, borderRadius: 3, height: "100%" }}>
-                  <Typography fontWeight={700}>{t("home.portfolio.ingresos")}</Typography>
-                  <Typography variant="body2" color="text.secondary" sx={{ mt: 0.5 }}>
-                    {t("home.portfolio.ingresosDesc")}
-                  </Typography>
-                </Paper>
-              </Grid>
-            </Grid>
           </SectionCard>
         </Grid>
       </Grid>

@@ -1,8 +1,17 @@
 // src/i18n/translations.js
 const translations = {
   en: {
-    nav: { home: "Home", skills: "Skills", projects: "Projects", contact: "Contact" },
-    common: { downloadCV: "Download CV", github: "GitHub", switchTo: "Switch to" },
+    nav: {
+      home: "Home",
+      skills: "Skills",
+      projects: "Projects",
+      contact: "Contact",
+    },
+    common: {
+      downloadCV: "Download CV",
+      github: "GitHub",
+      switchTo: "Switch to",
+    },
     home: {
       name: "Roberto Fabián González Vargas",
       title: "Full Stack & Linux Systems Engineer",
@@ -25,46 +34,125 @@ const translations = {
         b4: "- Designed and implemented the backend for 'iShoes' using Express.js, Firebase Admin SDK and RESTful APIs.",
         b5: "- Created 'Control de Ingresos', a financial tracking app with user balance summaries and Firestore.",
         b6: "- Collaborated with clients to define requirements, timelines, and deliverables.",
-        b7: "- Focused on clean, maintainable code and intuitive user experiences."
+        b7: "- Focused on clean, maintainable code and intuitive user experiences.",
       },
       portfolio: {
         teetime: "🟢 Tee-Time",
         ishoes: "🟢 iShoes",
-        ingresos: "🟢 Control de Ingresos",
+        ingresos: "🟢 Income Tracker",
         teetimeDesc: "Golf reservation app built with React Native",
-        ishoesDesc: "E-commerce app with admin dashboard, backend and stock management",
-        ingresosDesc: "Weekly summary and expense tracker with Firestore integration"
-      }
+        ishoesDesc:
+          "E-commerce app with admin dashboard, backend and stock management",
+        ingresosDesc:
+          "Weekly summary and expense tracker with Firestore integration",
+      },
     },
     skills: {
       title: "Technical Skills",
-      subtitle: "A categorized list of tools, frameworks, and technologies I use professionally",
+      subtitle:
+        "A categorized list of tools, frameworks, and technologies I use professionally",
       frontend: "Frontend",
       backend: "Backend",
       devops: "DevOps & Infrastructure",
       linux: "Linux & CLI Tools",
-      security: "Security Basics"
+      security: "Security Basics",
+      ai: "AI & Generative",
     },
     projects: {
       title: "Project Examples",
       subtitle: "A few practical examples demonstrating solutions I've built",
-      screenshotsTitle: "Screenshots from app iShoes",
+      featured: "Featured projects",
+      viewDetails: "View details",
+      screenshotsTitle: "Screenshots from iShoes app",
       screenshotsDesc:
         "Example login screen using Firebase Auth with form validation and role-based access. The backend is deployed on a self-hosted server and securely exposed to the internet through a Cloudflare Tunnel.",
       downloadApk: "Download iShoes App (APK)",
       fetchTitle: "Fetch Products from iShoes Backend",
       fetchDesc:
-        "This example shows products retrieved from the iShoes backend REST API. Products can be added, edited, or deleted directly from the iShoes mobile app."
+        "This example shows products retrieved from the iShoes backend REST API. Products can be added, edited, or deleted directly from the iShoes mobile app.",
+      cards: {
+        ishoes: {
+          title: "iShoes (React Native + Backend)",
+          desc: "Mobile e-commerce with custom backend, roles and image uploads.",
+        },
+        teetime: {
+          title: "TeeTime (React Native)",
+          desc: "Tee-time booking with notifications and admin panel.",
+        },
+        ingresos: {
+          title: "Income Tracker (React Native + Firebase)",
+          desc: "Track income/expenses with weekly summary and history.",
+        },
+        motionpeek: {
+          title: "MotionPeek (Text/Image → Video)",
+          desc: "Generate 6s 720p micro-videos from a prompt or a reference image.",
+        },
+      },
+      ishoesLong:
+        "Mobile e-commerce with custom backend, role-based authentication, image storage and a management panel.",
     },
     contact: {
       title: "Contact",
       linkedin: "LinkedIn Profile",
-      location: "Guadalajara, Jalisco, Mexico"
-    }
+      location: "Guadalajara, Jalisco, Mexico",
+    },
+    motionpeek: {
+      title: "MotionPeek",
+      subtitle:
+        "Create 6s 720p micro-videos from a prompt, optionally using an image as the first frame.",
+      formTitle: "Generate video",
+      prompt: "Prompt",
+      firstFrameUrl: "Image URL (optional, first frame)",
+      firstFrameHelp:
+        "Use an image as the first frame to preserve composition/theme.",
+      saveToDisk: "Save a copy on my server (/uploads/ai)",
+      generate: "Generate",
+      resultTitle: "Result",
+      open: "Open in new tab",
+      download: "Download .mp4",
+      copyLink: "Copy link",
+      copied: "Copied!",
+      accessTitle: "Validate access",
+      apiKeyLabel: "API Key (x-api-key)",
+      apiKeyHelp: "Enter your key to enable generation and gallery.",
+      verifying: "Verifying...",
+      continue: "Continue",
+      logout: "Log out",
+      firstFrameTitle: "First frame (optional)",
+      remove: "Remove",
+      change: "Change",
+      pickFromGallery: "Pick from gallery",
+      savedVideosTitle: "Saved videos",
+      noneVideos: "There are no generated videos yet.",
+      galleryTitle: "Pick an image from gallery",
+      uploadImage: "Upload image",
+      uploadError: "Error uploading image",
+      galleryEmpty: "No images in the gallery yet. Upload one to get started.",
+      close: "Close",
+      listLoadError: "Could not load the list",
+      galleryLoadError: "Could not load the gallery",
+      enterApiKey: "Enter your API key (x-api-key).",
+      invalidApiKey: "Invalid API key.",
+      couldNotValidate: "Could not validate the key",
+      mustAuthFirst: "You must validate your API key first.",
+      requestFailed: "Request failed",
+      unauthorized: "Unauthorized: missing or invalid API key.",
+      forbidden: "Forbidden.",
+      errorGenerating: "Error generating video",
+    },
   },
   es: {
-    nav: { home: "Inicio", skills: "Habilidades", projects: "Proyectos", contact: "Contacto" },
-    common: { downloadCV: "Descargar CV", github: "GitHub", switchTo: "Cambiar a" },
+    nav: {
+      home: "Inicio",
+      skills: "Habilidades",
+      projects: "Proyectos",
+      contact: "Contacto",
+    },
+    common: {
+      downloadCV: "Descargar CV",
+      github: "GitHub",
+      switchTo: "Cambiar a",
+    },
     home: {
       name: "Roberto Fabián González Vargas",
       title: "Ingeniero Full Stack & Linux Systems",
@@ -87,43 +175,113 @@ const translations = {
         b4: "- Diseño e implementación del backend de 'iShoes' con Express.js, Firebase Admin SDK y APIs REST.",
         b5: "- Creación de 'Control de Ingresos', app financiera con resúmenes por usuario y Firestore.",
         b6: "- Colaboración con clientes para definir requerimientos, tiempos y entregables.",
-        b7: "- Enfoque en código limpio, mantenible y UX intuitiva."
+        b7: "- Enfoque en código limpio, mantenible y UX intuitiva.",
       },
       portfolio: {
         teetime: "🟢 Tee-Time",
         ishoes: "🟢 iShoes",
         ingresos: "🟢 Control de Ingresos",
         teetimeDesc: "App de reservas de golf desarrollada con React Native",
-        ishoesDesc: "App e-commerce con panel admin, backend y gestión de stock",
-        ingresosDesc: "Resumen semanal y control de gastos con Firestore"
-      }
+        ishoesDesc:
+          "App e-commerce con panel admin, backend y gestión de stock",
+        ingresosDesc: "Resumen semanal y control de gastos con Firestore",
+      },
     },
     skills: {
       title: "Habilidades Técnicas",
-      subtitle: "Lista categorizada de herramientas y tecnologías que uso profesionalmente",
+      subtitle:
+        "Lista categorizada de herramientas y tecnologías que uso profesionalmente",
       frontend: "Frontend",
       backend: "Backend",
       devops: "DevOps e Infraestructura",
       linux: "Linux y Herramientas CLI",
-      security: "Fundamentos de Seguridad"
+      security: "Fundamentos de Seguridad",
+      ai: "IA y Generativa",
     },
     projects: {
       title: "Ejemplos de Proyectos",
       subtitle: "Algunos ejemplos prácticos de soluciones que he construido",
+      featured: "Proyectos destacados",
+      viewDetails: "Ver detalles",
       screenshotsTitle: "Capturas de la app iShoes",
       screenshotsDesc:
-        "Pantalla de login con Firebase Auth, validación de formularios y RBAC. El backend está desplegado en un servidor propio y expuesto de forma segura a internet mediante Cloudflare Tunnel.",
+        "Pantalla de login con Firebase Auth, validación de formularios y RBAC (Control de Acceso Basado en Roles). El backend está desplegado en un servidor propio y expuesto de forma segura a internet mediante Cloudflare Tunnel.",
       downloadApk: "Descargar iShoes (APK)",
       fetchTitle: "Consumo de productos desde el backend iShoes",
       fetchDesc:
-        "Ejemplo de productos obtenidos del backend REST de iShoes. Se pueden agregar, editar o borrar desde la app móvil."
+        "Ejemplo de productos obtenidos del backend REST de iShoes. Se pueden agregar, editar o borrar desde la app móvil.",
+      cards: {
+        ishoes: {
+          title: "iShoes (React Native + Backend)",
+          desc: "E-commerce móvil con backend propio, roles y carga de imágenes.",
+        },
+        teetime: {
+          title: "TeeTime (React Native)",
+          desc: "Reserva de horarios con notificaciones y panel de administración.",
+        },
+        ingresos: {
+          title: "Control de Ingresos (React Native + Firebase)",
+          desc: "Registro de ingresos/gastos, resumen semanal e historial.",
+        },
+        motionpeek: {
+          title: "MotionPeek (Texto/Imagen → Video)",
+          desc: "Genera microvideos (6s, 720p) desde un prompt o una imagen inicial.",
+        },
+      },
+      ishoesLong:
+        "E-commerce móvil con backend propio, autenticación por roles, almacenamiento de imágenes y panel de gestión.",
     },
     contact: {
       title: "Contacto",
       linkedin: "Perfil de LinkedIn",
-      location: "Guadalajara, Jalisco, México"
-    }
-  }
+      location: "Guadalajara, Jalisco, México",
+    },
+    motionpeek: {
+      title: "MotionPeek",
+      subtitle:
+        "Genera microvideos (6s, 720p) desde un prompt o usando una imagen como primer frame.",
+      formTitle: "Generar video",
+      prompt: "Prompt",
+      firstFrameUrl: "URL de imagen (opcional, primer frame)",
+      firstFrameHelp:
+        "Usa una imagen como primer frame para mantener composición/tema.",
+      saveToDisk: "Guardar copia en mi servidor (/uploads/ai)",
+      generate: "Generar",
+      resultTitle: "Resultado",
+      open: "Abrir en pestaña",
+      download: "Descargar .mp4",
+      copyLink: "Copiar enlace",
+      copied: "¡Copiado!",
+      accessTitle: "Validar acceso",
+      apiKeyLabel: "API Key (x-api-key)",
+      apiKeyHelp: "Ingresa tu clave para habilitar la generación y la galería.",
+      verifying: "Verificando...",
+      continue: "Continuar",
+      logout: "Cerrar sesión",
+      firstFrameTitle: "Primer frame (opcional)",
+      remove: "Quitar",
+      change: "Cambiar",
+      pickFromGallery: "Elegir imagen de galería",
+      savedVideosTitle: "Videos guardados",
+      noneVideos: "Aún no hay videos generados.",
+      galleryTitle: "Elegir imagen de galería",
+      uploadImage: "Subir imagen",
+      uploadError: "Error al subir imagen",
+      galleryEmpty:
+        "Aún no hay imágenes en la galería. Sube una para comenzar.",
+      close: "Cerrar",
+      listLoadError: "No se pudo cargar la lista",
+      galleryLoadError: "No se pudo cargar la galería",
+      enterApiKey: "Ingresa tu API key (x-api-key).",
+      invalidApiKey: "API key inválida.",
+      couldNotValidate: "No se pudo validar la clave",
+      mustAuthFirst: "Debes validar tu API key primero.",
+      requestFailed: "Solicitud fallida",
+      unauthorized: "No autorizado: API key inválida o faltante.",
+      forbidden: "Prohibido.",
+      errorGenerating: "Error al generar el video",
+    },
+  },
 };
 
 export default translations;

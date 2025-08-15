@@ -18,6 +18,7 @@ import StorageIcon from "@mui/icons-material/Storage";
 import CloudIcon from "@mui/icons-material/Cloud";
 import TerminalIcon from "@mui/icons-material/Terminal";
 import SecurityIcon from "@mui/icons-material/Security";
+import AutoAwesomeIcon from "@mui/icons-material/AutoAwesome";
 import { useLanguage } from "../context/LanguageContext";
 
 const SectionCard = ({ icon, title, children }) => {
@@ -58,7 +59,7 @@ const Skills = () => {
 
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 4, md: 6 } }}>
-      {/* HERO (mismo estilo que Home, con ajustes móviles) */}
+      {/* HERO */}
       <Paper
         elevation={3}
         sx={{
@@ -93,42 +94,94 @@ const Skills = () => {
           >
             {t("skills.subtitle")}
           </Typography>
-
         </Stack>
       </Paper>
 
-      {/* GRID por categorías (SectionCard como en Home) */}
+      {/* GRID por categorías */}
       <Grid container spacing={3}>
+        {/* AI & Generative */}
+        <Grid item xs={12} md={6}>
+          <SectionCard
+            icon={<AutoAwesomeIcon color="primary" />}
+            title={t("skills.ai") || "AI & Generative"}
+          >
+            <Stack direction="row" flexWrap="wrap" gap={1} rowGap={1}>
+              {[
+                "Replicate SDK",
+                "Minimax video-01",
+                "Text-to-Video (T2V)",
+                "Image-to-Video (I2V)",
+                "Prompt Engineering",
+                "First-frame pipeline",
+                "Video delivery (MP4)",
+                "MotionPeek (demo)",
+              ].map((tech) => (
+                <Chip key={tech} label={tech} sx={chipSx} />
+              ))}
+            </Stack>
+          </SectionCard>
+        </Grid>
+
+        {/* Frontend */}
         <Grid item xs={12} md={6}>
           <SectionCard icon={<CodeIcon color="primary" />} title={t("skills.frontend")}>
             <Stack direction="row" flexWrap="wrap" gap={1} rowGap={1}>
-              {["JavaScript", "React", "React Native", "Expo", "Material UI"].map((tech) => (
+              {[
+                "JavaScript",
+                "React",
+                "React Native",
+                "Expo",
+                "Material UI",
+                "Dialogs & Video player",
+                "i18n (context)",
+                "Clipboard & Downloads",
+                "Responsive layout / Theming",
+              ].map((tech) => (
                 <Chip key={tech} label={tech} sx={chipSx} />
               ))}
             </Stack>
           </SectionCard>
         </Grid>
 
+        {/* Backend */}
         <Grid item xs={12} md={6}>
           <SectionCard icon={<StorageIcon color="primary" />} title={t("skills.backend")}>
             <Stack direction="row" flexWrap="wrap" gap={1} rowGap={1}>
-              {["Express.js", "Firebase Auth", "Firestore", "REST APIs"].map((tech) => (
+              {[
+                "Node.js",
+                "Express",
+                "REST APIs",
+                "Multer (uploads)",
+                "Static files (/uploads)",
+                "Morgan (logs)",
+                "Fetch/stream handling",
+                "Firebase Auth",
+                "Firestore",
+              ].map((tech) => (
                 <Chip key={tech} label={tech} sx={chipSx} />
               ))}
             </Stack>
           </SectionCard>
         </Grid>
 
+        {/* DevOps & Infra */}
         <Grid item xs={12} md={6}>
           <SectionCard icon={<CloudIcon color="primary" />} title={t("skills.devops")}>
             <Stack direction="row" flexWrap="wrap" gap={1} rowGap={1}>
-              {["Cloudflare Tunnel", "Docker", "CI/CD (basic)", "Ansible"].map((tech) => (
+              {[
+                "Cloudflare Tunnel",
+                "Static hosting",
+                "CI/CD (basic)",
+                "Docker",
+                "Ansible",
+              ].map((tech) => (
                 <Chip key={tech} label={tech} sx={chipSx} />
               ))}
             </Stack>
           </SectionCard>
         </Grid>
 
+        {/* Linux & CLI */}
         <Grid item xs={12} md={6}>
           <SectionCard icon={<TerminalIcon color="primary" />} title={t("skills.linux")}>
             <Stack direction="row" flexWrap="wrap" gap={1} rowGap={1}>
@@ -139,10 +192,16 @@ const Skills = () => {
           </SectionCard>
         </Grid>
 
+        {/* Security */}
         <Grid item xs={12} md={6}>
           <SectionCard icon={<SecurityIcon color="primary" />} title={t("skills.security")}>
             <Stack direction="row" flexWrap="wrap" gap={1} rowGap={1}>
-              {["HTTPS / SSL", "Auth with JWT", "Role-based Access Control"].map((tech) => (
+              {[
+                "HTTPS / SSL",
+                "API Key (x-api-key)",
+                "Auth with JWT",
+                "Role-based Access Control",
+              ].map((tech) => (
                 <Chip key={tech} label={tech} sx={chipSx} />
               ))}
             </Stack>
