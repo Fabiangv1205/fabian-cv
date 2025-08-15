@@ -150,7 +150,11 @@ const Home = () => {
               "Firebase",
               "Docker",
               "Linux/CLI",
-              "Ansible",
+              "Ansible", "Generative AI",
+              "Prompt Engineering",
+              "OpenAI API",
+              "Text-to-Video (T2V)",
+              "Image-to-Video (I2V)",
             ].map((tag) => (
               <Chip
                 key={tag}

@@ -14,12 +14,12 @@ const translations = {
     },
     home: {
       name: "Roberto Fabián González Vargas",
-      title: "Full Stack & Linux Systems Engineer",
+      title: "Full-Stack Engineer (React & React Native) · Linux/DevOps",
       subtitle:
-        "Creating scalable, maintainable and user-centric solutions with React, Firebase and Linux tools.",
+        "I ship production-grade web & mobile apps with React & React Native, Node/Express and Firebase — on Linux (Docker, Ansible, CI/CD) — enhanced by Generative AI.",
       summaryTitle: "Professional Summary",
       summaryText:
-        "Full Stack and Linux Systems Engineer with hands-on experience in Linux administration, automation using Ansible, and modern web development with React, Express, and Django. Skilled in containerization with Docker and cloud-based tools. Over the past year, I’ve delivered tailored mobile and web applications for real-world clients, working independently or collaboratively. Focused on building scalable, maintainable, and user-centric software solutions.",
+        "Full-Stack & Linux Systems Engineer delivering production-ready web and mobile apps with React & React Native on the front end and Node/Express on the back end. Experienced in Linux administration, Docker, Ansible automation, and CI/CD (GitHub Actions). Comfortable with Firebase/Firestore . I also apply Generative AI (OpenAI API, prompt engineering, T2V/I2V workflows) to speed up content and feature delivery. I focus on building scalable, maintainable, user-centric solutions and have shipped tailor-made products for real clients, independently or within small teams, using Cloudflare Tunnel for secure exposure when needed.",
       workTitle: "Work Experience",
       freelance: "Freelance Web & Mobile Developer",
       period: "January 2024 – Present",
@@ -157,10 +157,10 @@ const translations = {
       name: "Roberto Fabián González Vargas",
       title: "Ingeniero Full Stack & Linux Systems",
       subtitle:
-        "Creando soluciones escalables, mantenibles y centradas en el usuario con React, Firebase y herramientas Linux.",
+        "Entrego apps web y móviles listas para producción con React y React Native, Node/Express y Firebase — sobre Linux (Docker, Ansible, CI/CD) — potenciadas con IA generativa.",
       summaryTitle: "Resumen Profesional",
       summaryText:
-        "Ingeniero Full Stack y de Sistemas Linux con experiencia práctica en administración de Linux, automatización con Ansible y desarrollo web moderno con React y Express. Conocimientos en contenerización con Docker y herramientas en la nube. Durante el último año, he entregado aplicaciones web y móviles personalizadas para clientes reales, trabajando de forma independiente o en equipo. Enfocado en construir soluciones escalables, mantenibles y centradas en el usuario.",
+        "Ingeniero Full Stack y de Sistemas Linux que entrega aplicaciones web y móviles listas para producción con React y React Native en el front-end y Node/Express en el back-end. Experiencia en administración de Linux, Docker, automatización con Ansible y CI/CD (GitHub Actions). Manejo de Firebase/Firestore . Aplico IA generativa (OpenAI API, prompt engineering, flujos T2V/I2V) para acelerar la entrega de contenido y funcionalidades. Enfocado en construir soluciones escalables, mantenibles y centradas en el usuario; he entregado productos a medida para clientes reales, de forma independiente o en equipos pequeños, utilizando Cloudflare Tunnel cuando se requiere exposición segura.",
       workTitle: "Experiencia Laboral",
       freelance: "Desarrollador Web & Móvil Freelance",
       period: "Enero 2024 – Presente",
