@@ -8,7 +8,6 @@ import {
   Card,
   CardContent,
   CardHeader,
-  Chip,
   Stack,
   Grid,
   Divider,
@@ -55,11 +54,6 @@ const SectionCard = ({ icon, title, children, action }) => {
 const Home = () => {
   const theme = useTheme();
   const { t } = useLanguage();
-
-  const primaryTone = alpha(
-    theme.palette.primary.main,
-    theme.palette.mode === "dark" ? 0.18 : 0.12
-  );
 
   return (
     <Container maxWidth="lg" sx={{ py: { xs: 4, md: 6 } }}>
@@ -138,36 +132,7 @@ const Home = () => {
             </Button>
           </Stack>
 
-          {/* Chips: wrap + gaps y límites de ancho */}
-          <Stack
-            direction="row"
-            sx={{ pt: 2, width: "100%", maxWidth: 680, justifyContent: "center", flexWrap: "wrap", gap: 1, rowGap: 1 }}
-          >
-            {[
-              "React",
-              "React Native",
-              "Express",
-              "Firebase",
-              "Docker",
-              "Linux/CLI",
-              "Ansible", "Generative AI",
-              "Prompt Engineering",
-              "OpenAI API",
-              "Text-to-Video (T2V)",
-              "Image-to-Video (I2V)",
-            ].map((tag) => (
-              <Chip
-                key={tag}
-                label={tag}
-                size="small"
-                sx={{
-                  bgcolor: primaryTone,
-                  fontWeight: 600,
-                  whiteSpace: "nowrap",
-                }}
-              />
-            ))}
-          </Stack>
+
         </Stack>
       </Paper>
 
