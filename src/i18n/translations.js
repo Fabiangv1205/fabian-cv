@@ -14,12 +14,12 @@ const translations = {
     },
     home: {
       name: "Roberto Fabián González Vargas",
-      title: "Full-Stack Engineer (React & React Native) · Linux/DevOps",
+      title: "Full-Stack Developer and Linux Engineer",
       subtitle:
-        "I ship production-grade web & mobile apps with React & React Native, Node/Express and Firebase — on Linux (Docker, Ansible, CI/CD) — enhanced by Generative AI.",
+        "Creating scalable and maintainable web & mobile apps with React & React Native, Node/Express and Firebase — on Linux (Docker, Ansible, CI/CD) — enhanced by Generative AI.",
       summaryTitle: "Professional Summary",
       summaryText:
-        "Full-Stack & Linux Systems Engineer delivering production-ready web and mobile apps with React & React Native on the front end and Node/Express on the back end. Experienced in Linux administration, Docker, Ansible automation, and CI/CD (GitHub Actions). Comfortable with Firebase/Firestore . I also apply Generative AI (OpenAI API, prompt engineering, T2V/I2V workflows) to speed up content and feature delivery. I focus on building scalable, maintainable, user-centric solutions and have shipped tailor-made products for real clients, independently or within small teams, using Cloudflare Tunnel for secure exposure when needed.",
+        "Full-Stack Developer and Linux Systems Engineer delivering production-ready web and mobile apps with React/React Native on the frontend and Node.js/Express on the backend. Experienced in Linux administration, Docker, Ansible automation, and CI/CD with GitHub Actions; proficient with Firebase/Firestore. Apply generative-AI workflows (OpenAI API, prompt engineering; text-to-video/image-to-video) to accelerate content and feature delivery. Focused on scalable, maintainable, user-centric solutions.",
       workTitle: "Work Experience",
       freelance: "Freelance Web & Mobile Developer",
       period: "January 2024 – Present",
@@ -155,12 +155,12 @@ const translations = {
     },
     home: {
       name: "Roberto Fabián González Vargas",
-      title: "Ingeniero Full Stack & Linux Systems",
+      title: "Desarrollador Full Stack & Ingeniero Linux",
       subtitle:
-        "Entrego apps web y móviles listas para producción con React y React Native, Node/Express y Firebase — sobre Linux (Docker, Ansible, CI/CD) — potenciadas con IA generativa.",
+        "Creando apps web y móviles escalables y mantenibles listas para producción con React y React Native, Node/Express y Firebase — sobre Linux (Docker, Ansible, CI/CD) — potenciadas con IA generativa.",
       summaryTitle: "Resumen Profesional",
       summaryText:
-        "Ingeniero Full Stack y de Sistemas Linux que entrega aplicaciones web y móviles listas para producción con React y React Native en el front-end y Node/Express en el back-end. Experiencia en administración de Linux, Docker, automatización con Ansible y CI/CD (GitHub Actions). Manejo de Firebase/Firestore . Aplico IA generativa (OpenAI API, prompt engineering, flujos T2V/I2V) para acelerar la entrega de contenido y funcionalidades. Enfocado en construir soluciones escalables, mantenibles y centradas en el usuario; he entregado productos a medida para clientes reales, de forma independiente o en equipos pequeños, utilizando Cloudflare Tunnel cuando se requiere exposición segura.",
+        "Desarrollador Full-Stack y Linux Systems Engineer que entrega apps web y móviles listas para producción con React/React Native (frontend) y Node.js/Express (backend). Experiencia en administración Linux, Docker, Ansible y CI/CD (GitHub Actions), además de Firebase/Firestore. Aplico flujos de IA generativa (OpenAI API, prompt engineering) para acelerar contenido y funcionalidades. Enfoque en soluciones escalables, mantenibles y centradas en el usuario.",
       workTitle: "Experiencia Laboral",
       freelance: "Desarrollador Web & Móvil Freelance",
       period: "Enero 2024 – Presente",

@@ -114,7 +114,7 @@ const Home = () => {
             <Button
               variant="contained"
               startIcon={<DownloadIcon />}
-              href="/Roberto_Fabian_Gonzalez_Vargas2.pdf"
+              href="/Roberto Fabian Gonzalez Vargas.pdf"
               download
               sx={{ borderRadius: 99, px: 2.5, width: { xs: "100%", sm: "auto" } }}
             >
