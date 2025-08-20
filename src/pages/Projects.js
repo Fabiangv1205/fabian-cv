@@ -30,6 +30,13 @@ const Projects = () => {
 
   const projects = [
     {
+      key: "chatbot",
+      title:
+        "Chat-bot",
+      to: "/projects/chatbot",
+      icon: <MovieCreationIcon />,
+    },
+    {
       key: "motionpeek",
       title:
         t("projects.cards.motionpeek.title") ||

@@ -12,6 +12,7 @@ import TeeTime from "./pages/projects/TeeTime";
 import Ingresos from "./pages/projects/Ingresos";
 import { LanguageProvider } from "./context/LanguageContext";
 import MotionPeek from "./pages/projects/MotionPeek";
+import Chatbot from "./pages/projects/Chatbot";
 
 
 const AppContent = () => {
@@ -29,6 +30,7 @@ const AppContent = () => {
         }}
       >
         <Routes>
+          <Route path="/projects/chatbot" element={<Chatbot />} />
           <Route path="/projects/motionpeek" element={<MotionPeek />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
