@@ -142,7 +142,7 @@ const translations = {
     },
     chatbot: {
       title: "Chatbot",
-      subtitle: "Real-time streaming assistant with a secure backend.",
+      subtitle: "Real-time AI chat with OpenAI, built with Node/Express and a protected API.",
       accessTitle: "Validate access",
       apiKeyLabel: "API key (x-api-key)",
       apiKeyHelp: "Enter your access key to use the chatbot.",
@@ -306,7 +306,7 @@ const translations = {
     },
     chatbot: {
       title: "Chatbot",
-      subtitle: "Asistente con streaming en tiempo real y backend seguro.",
+      subtitle: "Chat IA en tiempo real con OpenAI, creado en Node/Express y API protegida.",
       accessTitle: "Validar acceso",
       apiKeyLabel: "API key (x-api-key)",
       apiKeyHelp: "Ingresa tu clave para usar el chatbot.",
