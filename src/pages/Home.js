@@ -178,38 +178,42 @@ const Home = () => {
             <Stack spacing={1.2}>
               <Typography variant="body2">
                 ✅ Certificación LPI Linux Essentials: Temario oficial completo —{" "}
-                <MuiLink underline="hover" href="#" color="primary">
+                <MuiLink underline="hover" href="https://www.udemy.com/certificate/UC-b8daa5cb-ab28-415b-92e2-4b7014757bdc/" color="primary">
                   UC-b8daa5cb-ab28-415b-92e2-4b7014757bdc
                 </MuiLink>
               </Typography>
               <Typography variant="body2">
                 ✅ Ansible desde Cero (2023) —{" "}
-                <MuiLink underline="hover" href="#" color="primary">
+                <MuiLink underline="hover" href="https://www.udemy.com/certificate/UC-72bcfa43-5440-4475-a7f8-de77b82c6572/" color="primary">
                   UC-72bcfa43-5440-4475-a7f8-de77b82c6572
                 </MuiLink>
               </Typography>
               <Typography variant="body2">
                 ✅ Python Total. Programador Avanzado en 16 días —{" "}
-                <MuiLink underline="hover" href="#" color="primary">
+                <MuiLink underline="hover" href="https://www.udemy.com/certificate/UC-329464f6-fa0e-482d-8e9e-907d56728c00/" color="primary">
                   UC-329464f6-fa0e-482d-8e9e-907d56728c00
                 </MuiLink>
               </Typography>
               <Typography variant="body2">
                 ✅ Maneja Dockers en 5 días. Mejora como SysAdmin Linux o DevOps —{" "}
-                <MuiLink underline="hover" href="#" color="primary">
+                <MuiLink underline="hover" href="https://www.udemy.com/certificate/UC-d4f421dd-64c3-41c6-81c6-c3e2c3812dca/" color="primary">
                   UC-d4f421dd-64c3-41c6-81c6-c3e2c3812dca
                 </MuiLink>
               </Typography>
               <Typography variant="body2">
                 ✅ Certificación LPIC-2: Ingeniero Linux. Examen 201 —{" "}
-                <MuiLink underline="hover" href="#" color="primary">
+                <MuiLink underline="hover" href="https://www.udemy.com/certificate/UC-bb29d961-354d-4066-ba42-9363cebd7358/" color="primary">
                   UC-bb29d961-354d-4066-ba42-9363cebd7358
                 </MuiLink>
               </Typography>
-              <Typography variant="body2">⏳ Curso de Inglés B1.2/B2.1</Typography>
               <Typography variant="body2">
-                ⏳ Aprende Inteligencia Artificial Generativa: LLMs, ChatGPT, GPTs, Prompt Engineering, Midjourney, Stable Diffusion y más!
+                ✅ Curso Completo de IA Generativa: ChatGPT, Midjourney y mas! —{" "}
+                <MuiLink underline="hover" href="https://www.udemy.com/certificate/UC-2739192e-5787-4570-8da0-7bfe59f7497c/" color="primary">
+                  UC-2739192e-5787-4570-8da0-7bfe59f7497c
+                </MuiLink>
               </Typography>
+              <Typography variant="body2">⏳ Curso de Inglés B1.2/B2.1</Typography>
+              <Typography variant="body2">⏳ Machine Learning y Data Science: Curso Completo con Python</Typography>
             </Stack>
           </SectionCard>
         </Grid>

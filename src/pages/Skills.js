@@ -114,7 +114,6 @@ const Skills = () => {
                 "Prompt Engineering",
                 "First-frame pipeline",
                 "Video delivery (MP4)",
-                "MotionPeek (demo)",
               ].map((tech) => (
                 <Chip key={tech} label={tech} sx={chipSx} />
               ))}
